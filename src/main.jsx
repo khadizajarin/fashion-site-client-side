@@ -9,6 +9,10 @@ import Home from './componants/Home.jsx';
 import AddProduct from './componants/AddProduct.jsx';
 import MyCart from './componants/MyCart.jsx';
 import Root from './componants/Root';
+import Register from './componants/Register';
+import Login from './componants/Login';
+import AuthProvider from './componants/AuthProvide/AuthProvider';
+import PrivateRoute from './componants/PrivateRoute';
 // import { Root } from 'postcss';
 
 const router = createBrowserRouter([
@@ -24,11 +28,19 @@ const router = createBrowserRouter([
       },
       {
         path:'/addProduct',
-        element: <AddProduct></AddProduct>
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path: '/myCart',
         element:<MyCart></MyCart>
+      },
+      {
+        path: '/register',
+        element:<Register></Register>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
       }
     ]
   },
@@ -36,6 +48,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
