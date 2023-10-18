@@ -1,35 +1,104 @@
-{
-    "brands": [
-      {
-        "id": 1,
-        "name": "Nike",
-        "image": "https://media.istockphoto.com/id/1415769833/photo/3d-background-wood-pedestal-podium-on-natural-dry-autumn-leaf-shadow-beige-backdrop-fall.jpg?s=2048x2048&w=is&k=20&c=dxndU_4znU8j8gRe_AScfsFNoruXzd9cluLcBUUuRhg="
-      },
-      {
-        "id": 2,
-        "name": "Adidas",
-        "image": "https://media.istockphoto.com/id/1472768959/photo/summer-poster-with-tropical-leaves-and-peacock-feathers.jpg?s=2048x2048&w=is&k=20&c=SyEZzf1sOc1JxAjH7wSh97BU3Sh5CfegbjUODkpQqaE="
-      },
-      {
-        "id": 3,
-        "name": "Gucci",
-        "image": "https://media.istockphoto.com/id/1380241157/photo/travel-and-adventure-and-departure-concept-in-summer-surrounded-by-luggage-camera-sunglasses.jpg?s=2048x2048&w=is&k=20&c=84dOoCzjUecrSFssXwcXfep8ffq0mTfPZoCVNPCp-e0="
-      },
-      {
-        "id": 4,
-        "name": "Zara",
-        "image": "https://media.istockphoto.com/id/1030888824/photo/view-from-above-of-home-office-desk-with-laptop-flowers-and-leaves-on-pastel-pink-background.jpg?s=2048x2048&w=is&k=20&c=6IY1itp9qxl5MdPcZUjKRZi-8rKtXOhEVdXdv9-d-qA="
-      },
-      {
-        "id": 5,
-        "name": "H&M",
-        "image": "https://media.istockphoto.com/id/1285784033/photo/3d-wooden-podium-display-with-leaf-shadow-copy-space-beige-background-cosmetics-or-beauty.jpg?s=2048x2048&w=is&k=20&c=XGHyhB20bZ5qmERSwYN2_Tf6AHDMfr73nQl9MJPhAf4="
-      },
-      {
-        "id": 6,
-        "name": "Levi's",
-        "image": "https://images.unsplash.com/photo-1526857240824-92be52581d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-      }
-    ]
-  }
-  
+  [
+        {
+          "id": 1,
+          "name": "Nike",
+          "image": "https://media.istockphoto.com/id/1415769833/photo/3d-background-wood-pedestal-podium-on-natural-dry-autumn-leaf-shadow-beige-backdrop-fall.jpg?s=2048x2048&w=is&k=20&c=dxndU_4znU8j8gRe_AScfsFNoruXzd9cluLcBUUuRhg="
+        },
+        {
+          "id": 2,
+          "name": "Adidas",
+          "image": "https://media.istockphoto.com/id/1472768959/photo/summer-poster-with-tropical-leaves-and-peacock-feathers.jpg?s=2048x2048&w=is&k=20&c=SyEZzf1sOc1JxAjH7wSh97BU3Sh5CfegbjUODkpQqaE=",
+          "products": [
+            {
+              "id": "adidas001",
+              "Image": "https://example.com/adidas_product1.jpg",
+              "Name": "Adidas Ultraboost 21",
+              "Brand Name": "Adidas",
+              "Type": "Running Shoes",
+              "Price": "$179.99",
+              "Rating": 4.9,
+              "Details button": {
+                "text": "Details",
+                "link": "https://example.com/adidas_ultraboost_21_details"
+              },
+              "Update button": {
+                "text": "Update",
+                "action": "https://example.com/adidas_ultraboost_21_update"
+              }
+            },
+            {
+              "id": "adidas002",
+              "Image": "https://example.com/adidas_product2.jpg",
+              "Name": "Adidas Originals Track Jacket",
+              "Brand Name": "Adidas",
+              "Type": "Sportswear",
+              "Price": "$59.99",
+              "Rating": 4.5,
+              "Details button": {
+                "text": "Details",
+                "link": "https://example.com/adidas_track_jacket_details"
+              },
+              "Update button": {
+                "text": "Update",
+                "action": "https://example.com/adidas_track_jacket_update"
+              }
+            },
+            {
+              "id": "adidas003",
+              "Image": "https://example.com/adidas_product3.jpg",
+              "Name": "Adidas Superstar",
+              "Brand Name": "Adidas",
+              "Type": "Sneakers",
+              "Price": "$89.99",
+              "Rating": 4.7,
+              "Details button": {
+                "text": "Details",
+                "link": "https://example.com/adidas_superstar_details"
+              },
+              "Update button": {
+                "text": "Update",
+                "action": "https://example.com/adidas_superstar_update"
+              }
+            },
+            {
+              "id": "adidas004",
+              "Image": "https://example.com/adidas_product4.jpg",
+              "Name": "Adidas 3-Stripes Leggings",
+              "Brand Name": "Adidas",
+              "Type": "Sportswear",
+              "Price": "$34.99",
+              "Rating": 4.6,
+              "Details button": {
+                "text": "Details",
+                "link": "https://example.com/adidas_leggings_details"
+              },
+              "Update button": {
+                "text": "Update",
+                "action": "https://example.com/adidas_leggings_update"
+              }
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Gucci",
+          "image": "https://media.istockphoto.com/id/1380241157/photo/travel-and-adventure-and-departure-concept-in-summer-surrounded-by-luggage-camera-sunglasses.jpg?s=2048x2048&w=is&k=20&c=84dOoCzjUecrSFssXwcXfep8ffq0mTfPZoCVNPCp-e0="
+        },
+        {
+          "id": 4,
+          "name": "Zara",
+          "image": "https://media.istockphoto.com/id/1030888824/photo/view-from-above-of-home-office-desk-with-laptop-flowers-and-leaves-on-pastel-pink-background.jpg?s=2048x2048&w=is&k=20&c=6IY1itp9qxl5MdPcZUjKRZi-8rKtXOhEVdXdv9-d-qA="
+        },
+        {
+          "id": 5,
+          "name": "H&M",
+          "image": "https://media.istockphoto.com/id/1285784033/photo/3d-wooden-podium-display-with-leaf-shadow-copy-space-beige-background-cosmetics-or-beauty.jpg?s=2048x2048&w=is&k=20&c=XGHyhB20bZ5qmERSwYN2_Tf6AHDMfr73nQl9MJPhAf4="
+        },
+        {
+          "id": 6,
+          "name": "Levi's",
+          "image": "https://images.unsplash.com/photo-1526857240824-92be52581d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        }
+      ]
+    
+    

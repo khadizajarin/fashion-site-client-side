@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvide/AuthProvider";
 import { useLocation } from "react-router-dom";
+import Swal from 'sweetalert2'
+
 const Login = () => {
     const { signIn, createUserGoogle, locationState, setLocationState } = useContext(AuthContext);
     const location = useLocation();
@@ -32,6 +34,12 @@ const Login = () => {
         })
         .catch(error => {
             console.error(error);
+            Swal.fire({
+                title: 'Error!',
+                text: 'tomar email othoba password vul hoise! chokh meilla likho!',
+                icon: 'error',
+                confirmButtonText: 'Likhtesi Wait!'
+              })
         })
     }
 
@@ -42,7 +50,7 @@ const Login = () => {
         .then(result => {
             console.log(result.user);
             console.log('loggin  in')
-            navigate(location?.state? location.state : '/home');
+            navigate(location?.state? location.state : '/');
             console.log(location);
         })
         .catch (error => {

@@ -13,18 +13,23 @@ import Register from './componants/Register';
 import Login from './componants/Login';
 import AuthProvider from './componants/AuthProvide/AuthProvider';
 import PrivateRoute from './componants/PrivateRoute';
+import ErrorRoute from './componants/ErrorRoute';
+import Products from './componants/ProductsDetails/Products';
+import Brands from './componants/Brands';
 // import { Root } from 'postcss';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>, 
-    loader: ()=> fetch('data.json'),
+    errorElement:<ErrorRoute></ErrorRoute>,
     children: [
       {
-        path:'/home',
+        path:'/',
         element:<Home></Home>,
         loader: () => fetch('data.json')
+        // loader: () => fetch('http://localhost:5000/brands')
+
       },
       {
         path:'/addProduct',
@@ -32,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/myCart',
-        element:<MyCart></MyCart>
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
       },
       {
         path: '/register',
@@ -41,6 +46,16 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/brands',
+        element: <Brands></Brands>
+      },
+      {
+        // path: '/brands/:id',
+        path:'/products',
+        element: <Products></Products>,
+        loader: () => fetch('nike.json')
       }
     ]
   },

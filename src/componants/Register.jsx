@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvide/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 const Register = () => {
@@ -19,16 +20,28 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(email, password);
-        // const passRegex =  /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
+        const passRegex =  /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
 
-        // if (!passRegex.test(password)) {
-        //     return (alert("Password must be at least 6 characters long, contain a capital letter and a special character."));
-        // }
+        if (!passRegex.test(password)) {
+            return (
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Password must be at least 6 characters long, contain a capital letter and a special character.',
+                    icon: 'error',
+                    confirmButtonText: 'OK Buddy Cool! Let me Fix it!'
+                  })
+            )
+        }
 
         createUser(email,password)
         .then(result => {
             console.log(result.user)
             navigate(locationState? locationState : '/home')
+            Swal.fire(
+                'Good job!',
+                'Allah tumi sign up kore felso!',
+                'success'
+              )
         })
         .catch(error => {
             console.error(error); 

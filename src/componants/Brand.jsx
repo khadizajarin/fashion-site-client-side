@@ -1,10 +1,8 @@
 
-
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Brand = ({ brand }) => {
-    console.log(brand);
-    const { name, image } = brand;
+    const { id, name, image } = brand;
 
     return (
         <div className="brand-card">
@@ -15,7 +13,8 @@ const Brand = ({ brand }) => {
             <div className="card-body">
                 <h2 className="card-title text-7xl">{name}</h2>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-neutral">Buy Now</button>
+                    {/* <Link to={`/brands/${id}`}><button className="btn btn-neutral">See Products</button></Link> */}
+                     <Link to={'/products'}><button className="btn btn-neutral">See Products</button></Link>
                 </div>
             </div>
         </div>

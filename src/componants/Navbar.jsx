@@ -1,14 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvide/AuthProvider";
+import Swal from 'sweetalert2'
+
+
 const Navbar = () => {
 
     const {user, logOut} = useContext(AuthContext);
-    console.log(user)
     const handleLogOut = () => {
         logOut()
         .then( () => {
             console.log('logged out successful');
+            Swal.fire(
+                'Deikho kintu!',
+                'Ayhay tumi to sign out kore fella!',
+                'success'
+              )
         })
         .catch( error => {
             console.error(error);
@@ -17,7 +24,7 @@ const Navbar = () => {
     }
 
     const navlink = <>  
-            <li><NavLink to = "/home" style={({ isActive }) => ({ 
+            <li><NavLink to = "/" style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Home</NavLink></li>
             <li><NavLink to = "/addProduct" style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Add Product</NavLink></li>
@@ -34,7 +41,7 @@ const Navbar = () => {
                 } */}
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 ">
             <div className="navbar-start">
                 <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
