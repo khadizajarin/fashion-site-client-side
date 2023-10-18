@@ -23,7 +23,6 @@ const Products = () => {
 
 
   //adding slide
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
     'https://media.istockphoto.com/id/1384828553/photo/is-it-time-to-travel-again.jpg?s=2048x2048&w=is&k=20&c=YpfU5EYJouDLrFpabU7TONwlMBe-7FDx3a5N_CUcQPI=',
@@ -31,17 +30,19 @@ const Products = () => {
     'https://media.istockphoto.com/id/1464735815/photo/architecture-blueprint-or-hands-in-a-meeting-planning-a-creative-strategy-or-building-ideas.jpg?s=2048x2048&w=is&k=20&c=3ODVgugCuN9B882DkdSOrp0_mB7RUczZPDdnM3tw73k=',
   ];
 
-  const nextSlide = () => {
-    setCurrentSlide((currentSlide + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((currentSlide - 1 + images.length) % images.length);
-  };
-
-
-
-
+    const [currentSlide, setCurrentSlide] = useState(0);
+  
+    const prevSlide = () => {
+      if (currentSlide > 0) {
+        setCurrentSlide(currentSlide - 1);
+      }
+    };
+  
+    const nextSlide = () => {
+      if (currentSlide < images.length - 1) {
+        setCurrentSlide(currentSlide + 1);
+      }
+    };
 
 
   return (
@@ -49,13 +50,13 @@ const Products = () => {
       <Navbar></Navbar>
 
       {/* adding slider */}
-       <div className="relative">
-      <div className="slider-container flex items-center justify-center w-full md:w-2/3 mx-auto">
+      <div className="w-full h-64 relative my-10">
+      <div className="slider-container flex items-center justify-center">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`slide absolute w-full h-full transition-transform ${
-              index === currentSlide ? 'translate-x-0' : 'translate-x-full'
+            className={`slide absolute top-9 w-full h-full transition-transform ${
+              index === currentSlide ? 'visible' : 'hidden'
             }`}
           >
             <img src={image} alt={`Slide ${index + 1}`} className="object-cover w-full h-full" />
@@ -63,13 +64,13 @@ const Products = () => {
         ))}
       </div>
       <button
-        className="prev-button absolute left-2 transform -translate-y-1/2 text-white px-4 py-2 rounded-full"
+        className="prev-button bg-slate-500 absolute top-1/2 left-2 transform -translate-y-1/2 text-black px-4 py-2 rounded-full"
         onClick={prevSlide}
       >
         {'<'}
       </button>
       <button
-        className="next-button absolute right-2 transform -translate-y-1/2 text-white px-4 py-2 rounded-full"
+        className="next-button bg-slate-500 absolute top-1/2 right-2 transform -translate-y-1/2 text-black px-4 py-2 rounded-full"
         onClick={nextSlide}
       >
         {'>'}
@@ -77,7 +78,7 @@ const Products = () => {
     </div>
 
 
-{/* products showing */}
+{   /* products showing */}
 
       <div className="max-w-7xl mx-auto mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
