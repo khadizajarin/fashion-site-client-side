@@ -1,38 +1,109 @@
+import Swal from "sweetalert2";
 import Navbar from "./Navbar";
+import { useLoaderData} from "react-router-dom";
+// import { useEffect, useState } from "react";
 
 const UpdateProduct = () => {
+
+    const product = useLoaderData();
+    const {_id, productName, brand} = product;
+    
+    console.log(productName);
+
+
+    // const [products, setProducts] = useState([]);
+    // const filtered = products.find(product => product._id === productId )
+    // console.log(filtered);
+
+    // useEffect(() => {
+    //     fetch('https://fashion-site-server-go9vg31hf-khadizajarin.vercel.app/addProduct')
+    //       .then(res => res.json())
+    //       .then(data => {
+    //         setProducts(data);
+    //       })
+    //       .catch(error => {
+    //         console.error(error);
+    //       });
+    //   }, []);
+
+    const handleUpdateProduct = event =>{
+        event.preventDefault();
+
+        const form = event.target;
+
+        const productName = form.productName.value; 
+        const brand = form.brand.value; 
+        const type = form.type.value; 
+        const price = form.price.value; 
+        const description = form.description.value; 
+        const rating = form.rating.value; 
+        const photo = form.photo.value;    
+
+        const newProduct = {productName,brand,type,price,description, rating, photo};
+
+        console.log(newProduct);
+
+        fetch('https://fashion-site-server-go9vg31hf-khadizajarin.vercel.app/addProduct',{
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+        .then(res =>res.json())
+        .then(data=> {
+            console.log(data);
+            Swal.fire({
+                title: 'Product Updated Successfully!',
+                timer: 2000
+              });
+            // form.productName.value = '';
+            // form.brand.value = '';
+            // form.type.value = '';
+            // form.price.value = '';
+            // form.description.value = '';
+            // form.rating.value = '';
+            // form.photo.value = '';
+        });
+    }
+
+
+
+
+
+
     return (
         <div>
         <Navbar></Navbar>
         <div className="max-w-7xl mx-auto mt-16">
-            <form > 
+            <form onSubmit={handleUpdateProduct}> 
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center">
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Product Name:</span>
                         </label>
-                        <input type="text" name="productName" placeholder="Product Name" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="productName" defaultValue={productName} placeholder="Product Name" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Brand:</span>
                         </label>
-                        <input type="text" name="brand" placeholder="Brand" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="brand"  placeholder="Brand" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Type:</span>
                         </label>
-                        <input type="text" name="type" placeholder="Type" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="type"  placeholder="Type" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Price:</span>
                         </label>
-                        <input type="text" name="price" placeholder="Price" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="price"  placeholder="Price" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
@@ -46,17 +117,17 @@ const UpdateProduct = () => {
                         <label className="label">
                             <span className="label-text">Rating:</span>
                         </label>
-                        <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="rating"  placeholder="Rating" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Photo:</span>
                         </label>
-                        <input type="text" name="photo" placeholder="Photo" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="photo"  placeholder="Photo" className="input input-bordered w-full max-w-xs" />
                     </div>
                 </div>
-                <button className="btn btn-neutral mt-9 w-full">Add product</button>
+                <button value ="Update Product" className="btn btn-neutral mt-9 w-full">Update Product</button>
             </form>
          </div>
    </div>

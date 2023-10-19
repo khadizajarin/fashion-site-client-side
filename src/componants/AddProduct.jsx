@@ -101,7 +101,7 @@ const AddProduct = () => {
                             <input type="text" name="photo" placeholder="Photo" className="input input-bordered w-full max-w-xs" />
                         </div>
                     </div>
-                    <button className="btn btn-neutral mt-9 w-full">Add product</button>
+                    <button value="Add Product" className="btn btn-neutral mt-9 w-full">Add product</button>
                 </form>
              </div>
        </div>

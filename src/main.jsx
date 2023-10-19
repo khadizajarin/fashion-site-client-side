@@ -28,7 +28,6 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader: () => fetch('data.json')
       },
       {
         path:'/addProduct',
@@ -55,8 +54,9 @@ const router = createBrowserRouter([
         element: <Products></Products>,
       },
       {
-        path: '/updateProduct',
-        element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>
+        path: '/updateProduct/:id',
+        element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
+        loader: ({params})=> fetch(`http://localhost:5000/addProduct/${params.id}`)
       }
     ]
   },
