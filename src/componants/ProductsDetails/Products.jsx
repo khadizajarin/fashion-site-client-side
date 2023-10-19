@@ -2,14 +2,24 @@ import{ useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../Navbar";
 import Advertisement from "../Advertisement";
-
-
+import { saveProduct } from "../../utilities/uitlity";
+import Swal from "sweetalert2";
 
 const Products = (params) => {
   const [products, setProducts] = useState([]);
   const { name } = useParams();
 
 
+  const handleCartAdd =(id) => {
+    console.log(id);
+    saveProduct(id);
+    Swal.fire({
+      icon: "success",
+      title: `Product added to you cart successfully!`,
+      text: `See your cart List here in My Cart!`,
+      timer: 2000
+      });
+    }
  
 
   useEffect(() => {
@@ -62,7 +72,7 @@ const Products = (params) => {
                           <div className="card-actions justify-end">
                             <button className="btn btn-neutral">Details</button>
                             <Link to={`/updateProduct/${product._id}`}><button className="btn btn-neutral">Update</button></Link>
-                            <button className="btn btn-neutral">Add to Cart</button>
+                            <button onClick={() => handleCartAdd(product._id)}  className="btn btn-neutral">Add to Cart</button>
                           </div>
                         </div>
                     </div>

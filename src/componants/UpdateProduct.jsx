@@ -39,6 +39,7 @@ const UpdateProduct = () => {
             console.log(data);
             if(data.modifiedCount > 0){
                 Swal.fire({
+                icon: "success",
                 title: 'Product Updated Successfully!',
                 timer: 2000
               });

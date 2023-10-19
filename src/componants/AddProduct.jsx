@@ -29,10 +29,10 @@ const AddProduct = () => {
         .then(res =>res.json())
         .then(data=> {
             console.log(data);
-            if(data.modifiedCount > 0){
+            if(data.insertedId){
                 Swal.fire({
                 icon: "success",
-                title: 'Product Updated Successfully!',
+                title: 'Product Added Successfully!',
                 timer: 2000
               });
             }
