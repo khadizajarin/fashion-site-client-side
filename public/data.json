@@ -7,77 +7,7 @@
         {
           "id": 2,
           "name": "Adidas",
-          "image": "https://media.istockphoto.com/id/1472768959/photo/summer-poster-with-tropical-leaves-and-peacock-feathers.jpg?s=2048x2048&w=is&k=20&c=SyEZzf1sOc1JxAjH7wSh97BU3Sh5CfegbjUODkpQqaE=",
-          "products": [
-            {
-              "id": "adidas001",
-              "Image": "https://example.com/adidas_product1.jpg",
-              "Name": "Adidas Ultraboost 21",
-              "Brand Name": "Adidas",
-              "Type": "Running Shoes",
-              "Price": "$179.99",
-              "Rating": 4.9,
-              "Details button": {
-                "text": "Details",
-                "link": "https://example.com/adidas_ultraboost_21_details"
-              },
-              "Update button": {
-                "text": "Update",
-                "action": "https://example.com/adidas_ultraboost_21_update"
-              }
-            },
-            {
-              "id": "adidas002",
-              "Image": "https://example.com/adidas_product2.jpg",
-              "Name": "Adidas Originals Track Jacket",
-              "Brand Name": "Adidas",
-              "Type": "Sportswear",
-              "Price": "$59.99",
-              "Rating": 4.5,
-              "Details button": {
-                "text": "Details",
-                "link": "https://example.com/adidas_track_jacket_details"
-              },
-              "Update button": {
-                "text": "Update",
-                "action": "https://example.com/adidas_track_jacket_update"
-              }
-            },
-            {
-              "id": "adidas003",
-              "Image": "https://example.com/adidas_product3.jpg",
-              "Name": "Adidas Superstar",
-              "Brand Name": "Adidas",
-              "Type": "Sneakers",
-              "Price": "$89.99",
-              "Rating": 4.7,
-              "Details button": {
-                "text": "Details",
-                "link": "https://example.com/adidas_superstar_details"
-              },
-              "Update button": {
-                "text": "Update",
-                "action": "https://example.com/adidas_superstar_update"
-              }
-            },
-            {
-              "id": "adidas004",
-              "Image": "https://example.com/adidas_product4.jpg",
-              "Name": "Adidas 3-Stripes Leggings",
-              "Brand Name": "Adidas",
-              "Type": "Sportswear",
-              "Price": "$34.99",
-              "Rating": 4.6,
-              "Details button": {
-                "text": "Details",
-                "link": "https://example.com/adidas_leggings_details"
-              },
-              "Update button": {
-                "text": "Update",
-                "action": "https://example.com/adidas_leggings_update"
-              }
-            }
-          ]
+          "image": "https://media.istockphoto.com/id/1472768959/photo/summer-poster-with-tropical-leaves-and-peacock-feathers.jpg?s=2048x2048&w=is&k=20&c=SyEZzf1sOc1JxAjH7wSh97BU3Sh5CfegbjUODkpQqaE="
         },
         {
           "id": 3,

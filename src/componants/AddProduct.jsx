@@ -32,8 +32,15 @@ const AddProduct = () => {
             Swal.fire({
                 title: 'Product Added Successfully!',
                 timer: 2000
-              })
-        })
+              });
+            form.productName.value = '';
+            form.brand.value = '';
+            form.type.value = '';
+            form.price.value = '';
+            form.description.value = '';
+            form.rating.value = '';
+            form.photo.value = '';
+        });
     }
 
 

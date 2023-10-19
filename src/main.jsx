@@ -16,7 +16,8 @@ import PrivateRoute from './componants/PrivateRoute';
 import ErrorRoute from './componants/ErrorRoute';
 import Products from './componants/ProductsDetails/Products';
 import Brands from './componants/Brands';
-// import { Root } from 'postcss';
+import UpdateProduct from './componants/UpdateProduct';
+
 
 const router = createBrowserRouter([
   {
@@ -28,8 +29,6 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home></Home>,
         loader: () => fetch('data.json')
-        // loader: () => fetch('http://localhost:5000/brands')
-
       },
       {
         path:'/addProduct',
@@ -52,10 +51,12 @@ const router = createBrowserRouter([
         element: <Brands></Brands>
       },
       {
-        // path: '/brands/:id',
-        path:'/products',
+        path:'/products/:name',
         element: <Products></Products>,
-        loader: () => fetch('nike.json')
+      },
+      {
+        path: '/updateProduct',
+        element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>
       }
     ]
   },

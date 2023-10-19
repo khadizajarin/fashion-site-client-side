@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Banner from './Banner';
 import Footer from './Footer';
 import Brands from './Brands'
+import Advertisement from './Advertisement';
 const Home = () => {
     useEffect(() => {
         AOS.init();
@@ -13,7 +14,9 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Banner></Banner>
+            <Advertisement></Advertisement>
             <Brands></Brands>
+
             
 
             <section className="bg-white py-10 ">
