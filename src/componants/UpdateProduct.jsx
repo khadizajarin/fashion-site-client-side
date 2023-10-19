@@ -6,25 +6,9 @@ import { useLoaderData} from "react-router-dom";
 const UpdateProduct = () => {
 
     const product = useLoaderData();
-    const {_id, productName, brand} = product;
+    const {_id, productName, brand, type, price, description, rating, photo} = product;
     
     console.log(productName);
-
-
-    // const [products, setProducts] = useState([]);
-    // const filtered = products.find(product => product._id === productId )
-    // console.log(filtered);
-
-    // useEffect(() => {
-    //     fetch('https://fashion-site-server-go9vg31hf-khadizajarin.vercel.app/addProduct')
-    //       .then(res => res.json())
-    //       .then(data => {
-    //         setProducts(data);
-    //       })
-    //       .catch(error => {
-    //         console.error(error);
-    //       });
-    //   }, []);
 
     const handleUpdateProduct = event =>{
         event.preventDefault();
@@ -39,24 +23,27 @@ const UpdateProduct = () => {
         const rating = form.rating.value; 
         const photo = form.photo.value;    
 
-        const newProduct = {productName,brand,type,price,description, rating, photo};
+        const updatedProduct = {productName,brand,type,price,description, rating, photo};
 
-        console.log(newProduct);
+        console.log(updatedProduct);
 
-        fetch('https://fashion-site-server-go9vg31hf-khadizajarin.vercel.app/addProduct',{
-            method: 'POST',
+        fetch(`http://localhost:5000/addProduct/${_id}`,{
+            method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify(newProduct)
+            body: JSON.stringify(updatedProduct)
         })
         .then(res =>res.json())
         .then(data=> {
             console.log(data);
-            Swal.fire({
+            if(data.modifiedCount > 0){
+                Swal.fire({
                 title: 'Product Updated Successfully!',
                 timer: 2000
               });
+            }
+            
             // form.productName.value = '';
             // form.brand.value = '';
             // form.type.value = '';
@@ -89,42 +76,42 @@ const UpdateProduct = () => {
                         <label className="label">
                             <span className="label-text">Brand:</span>
                         </label>
-                        <input type="text" name="brand"  placeholder="Brand" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="brand" defaultValue={brand} placeholder="Brand" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Type:</span>
                         </label>
-                        <input type="text" name="type"  placeholder="Type" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="type" defaultValue={type} placeholder="Type" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Price:</span>
                         </label>
-                        <input type="text" name="price"  placeholder="Price" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="price" defaultValue={price} placeholder="Price" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Description:</span>
                         </label>
-                        <input type="text" name="description" placeholder="Description" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="description" defaultValue={description} placeholder="Description" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Rating:</span>
                         </label>
-                        <input type="text" name="rating"  placeholder="Rating" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="rating" defaultValue={rating} placeholder="Rating" className="input input-bordered w-full max-w-xs" />
                     </div>
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Photo:</span>
                         </label>
-                        <input type="text" name="photo"  placeholder="Photo" className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="photo" defaultValue={photo} placeholder="Photo" className="input input-bordered w-full max-w-xs" />
                     </div>
                 </div>
                 <button value ="Update Product" className="btn btn-neutral mt-9 w-full">Update Product</button>

@@ -29,10 +29,13 @@ const AddProduct = () => {
         .then(res =>res.json())
         .then(data=> {
             console.log(data);
-            Swal.fire({
-                title: 'Product Added Successfully!',
+            if(data.modifiedCount > 0){
+                Swal.fire({
+                icon: "success",
+                title: 'Product Updated Successfully!',
                 timer: 2000
               });
+            }
             form.productName.value = '';
             form.brand.value = '';
             form.type.value = '';
