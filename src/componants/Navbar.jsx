@@ -10,9 +10,8 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
         .then( () => {
-            console.log('logged out successful');
             Swal.fire(
-                'Deikho kintu!',
+                'Logged Out Successful!',
                 'Ayhay tumi to sign out kore fella!',
                 'success'
               )
@@ -30,15 +29,7 @@ const Navbar = () => {
                 color: isActive ? 'white' : '' })}>Add Product</NavLink></li>
             <li><NavLink to = "/myCart" style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>My Cart</NavLink></li>
-                {/* {
-                    user &&
-                    <>
-                    <li><NavLink to = "/booking" style={({ isActive }) => ({ 
-                        color: isActive ? 'white' : '' })}>Booking</NavLink></li>
-                    <li><NavLink to = "/profile" style={({ isActive }) => ({ 
-                color: isActive ? 'white' : '' })}>Profile</NavLink></li>
-                    </>
-                } */}
+
     </>
     return (
         <div className="navbar bg-base-100 ">

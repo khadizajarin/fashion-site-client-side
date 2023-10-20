@@ -2,32 +2,38 @@
         {
           "id": 1,
           "name": "Nike",
-          "image": "https://media.istockphoto.com/id/1415769833/photo/3d-background-wood-pedestal-podium-on-natural-dry-autumn-leaf-shadow-beige-backdrop-fall.jpg?s=2048x2048&w=is&k=20&c=dxndU_4znU8j8gRe_AScfsFNoruXzd9cluLcBUUuRhg="
+          "image": "https://media.istockphoto.com/id/1415769833/photo/3d-background-wood-pedestal-podium-on-natural-dry-autumn-leaf-shadow-beige-backdrop-fall.jpg?s=2048x2048&w=is&k=20&c=dxndU_4znU8j8gRe_AScfsFNoruXzd9cluLcBUUuRhg=",
+          "about" : "Nike, Inc. is a multinational sportswear and footwear company headquartered in Beaverton, Oregon, known for its iconic Swoosh logo and a wide range of athletic and casual products. Founded in 1964 as Blue Ribbon Sports by Bill Bowerman and Phil Knight, it has become one of the world's leading and most recognized sportswear brands."
         },
         {
           "id": 2,
           "name": "Adidas",
-          "image": "https://media.istockphoto.com/id/1472768959/photo/summer-poster-with-tropical-leaves-and-peacock-feathers.jpg?s=2048x2048&w=is&k=20&c=SyEZzf1sOc1JxAjH7wSh97BU3Sh5CfegbjUODkpQqaE="
+          "image": "https://media.istockphoto.com/id/1472768959/photo/summer-poster-with-tropical-leaves-and-peacock-feathers.jpg?s=2048x2048&w=is&k=20&c=SyEZzf1sOc1JxAjH7wSh97BU3Sh5CfegbjUODkpQqaE=",
+          "about" : "Adidas AG is a global sportswear and footwear company headquartered in Herzogenaurach, Germany, renowned for its distinctive three-stripe logo and a diverse range of sports and lifestyle products. Founded in 1949 by Adolf Dassler, Adidas is a major player in the athletic and fashion industries, with a strong emphasis on innovation and performance."
         },
         {
           "id": 3,
           "name": "Gucci",
-          "image": "https://media.istockphoto.com/id/1380241157/photo/travel-and-adventure-and-departure-concept-in-summer-surrounded-by-luggage-camera-sunglasses.jpg?s=2048x2048&w=is&k=20&c=84dOoCzjUecrSFssXwcXfep8ffq0mTfPZoCVNPCp-e0="
+          "image": "https://media.istockphoto.com/id/1380241157/photo/travel-and-adventure-and-departure-concept-in-summer-surrounded-by-luggage-camera-sunglasses.jpg?s=2048x2048&w=is&k=20&c=84dOoCzjUecrSFssXwcXfep8ffq0mTfPZoCVNPCp-e0=",
+          "about" : "Gucci is an Italian luxury fashion brand that was founded in 1921 by Guccio Gucci. It is known for its high-end clothing, accessories, and leather goods, and is celebrated for its iconic double-G logo and the use of premium materials in its products. Gucci has established itself as one of the world's leading luxury fashion houses, often associated with elegance and opulence."
         },
         {
           "id": 4,
           "name": "Zara",
-          "image": "https://media.istockphoto.com/id/1030888824/photo/view-from-above-of-home-office-desk-with-laptop-flowers-and-leaves-on-pastel-pink-background.jpg?s=2048x2048&w=is&k=20&c=6IY1itp9qxl5MdPcZUjKRZi-8rKtXOhEVdXdv9-d-qA="
+          "image": "https://media.istockphoto.com/id/1030888824/photo/view-from-above-of-home-office-desk-with-laptop-flowers-and-leaves-on-pastel-pink-background.jpg?s=2048x2048&w=is&k=20&c=6IY1itp9qxl5MdPcZUjKRZi-8rKtXOhEVdXdv9-d-qA=",
+          "about" : "Zara is a Spanish fast-fashion retailer and one of the world's largest fashion brands, known for its quick turnaround of affordable, trendy clothing and accessories. Founded in 1974, Zara is part of the Inditex fashion group and operates a vast global network of stores, frequently introducing new designs to its collections to stay on top of the latest fashion trends."
         },
         {
           "id": 5,
           "name": "H&M",
-          "image": "https://media.istockphoto.com/id/1285784033/photo/3d-wooden-podium-display-with-leaf-shadow-copy-space-beige-background-cosmetics-or-beauty.jpg?s=2048x2048&w=is&k=20&c=XGHyhB20bZ5qmERSwYN2_Tf6AHDMfr73nQl9MJPhAf4="
+          "image": "https://media.istockphoto.com/id/1285784033/photo/3d-wooden-podium-display-with-leaf-shadow-copy-space-beige-background-cosmetics-or-beauty.jpg?s=2048x2048&w=is&k=20&c=XGHyhB20bZ5qmERSwYN2_Tf6AHDMfr73nQl9MJPhAf4=",
+          "about" : "H&M, short for Hennes & Mauritz AB, is a Swedish multinational fashion retailer known for offering stylish and affordable clothing, as well as accessories and home goods. Established in 1947, H&M is one of the world's largest fashion retailers, with a commitment to sustainability and a vast global presence, catering to a wide range of fashion-conscious consumers."
         },
         {
           "id": 6,
           "name": "Levi's",
-          "image": "https://images.unsplash.com/photo-1526857240824-92be52581d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          "image": "https://images.unsplash.com/photo-1526857240824-92be52581d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          "about" : "Levi's, officially Levi Strauss & Co., is an American clothing company known for its iconic denim jeans and casual apparel. The brand has a rich history and is recognized for its durable, high-quality denim products. Levi's jeans have become a symbol of American culture and fashion, playing a significant role in the development of the global denim industry."
         }
       ]
     

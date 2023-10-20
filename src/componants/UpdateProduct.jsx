@@ -7,8 +7,6 @@ const UpdateProduct = () => {
 
     const product = useLoaderData();
     const {_id, productName, brand, type, price, description, rating, photo} = product;
-    
-    console.log(productName);
 
     const handleUpdateProduct = event =>{
         event.preventDefault();
@@ -27,7 +25,7 @@ const UpdateProduct = () => {
 
         console.log(updatedProduct);
 
-        fetch(`http://localhost:5000/addProduct/${_id}`,{
+        fetch(`https://fashion-site-server-6y1v8qce8-khadizajarin.vercel.app/addProduct/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
@@ -59,11 +57,11 @@ const UpdateProduct = () => {
 
 
 
-
     return (
         <div>
         <Navbar></Navbar>
         <div className="max-w-7xl mx-auto mt-16">
+        <div className="text-5xl text-center mb-10">Update Product Details</div>
             <form onSubmit={handleUpdateProduct}> 
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center">
                     <div className="form-control w-full max-w-xs">

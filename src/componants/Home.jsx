@@ -17,9 +17,9 @@ const Home = () => {
             <Advertisement></Advertisement>
             <Brands></Brands>
 
-            
+            {/* extra section one */}
 
-            <section className="bg-white py-10 ">
+            <section className="bg-gray-300 mt-28 py-10 ">
                         <div className="container mx-auto">
                             <h2 className="text-3xl font-semibold mb-6 text-black ml-6">Upcoming Events</h2>
                             <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
@@ -50,7 +50,8 @@ const Home = () => {
             </section>
 
 
-            <section className="bg-gray-100 py-10 ">
+            {/* extra section 2 */}
+            <section className="bg-gray-500 py-10 ">
                         <div className="container mx-auto">
                             <h2 className="text-3xl font-semibold mb-6 text-black ml-6">What Our Clients Say</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 justify-center gap-8">

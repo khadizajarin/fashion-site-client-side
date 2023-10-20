@@ -9,7 +9,7 @@ const MyCart = () => {
     const [added, setAdded] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/cart', {
+        fetch('https://fashion-site-server-6y1v8qce8-khadizajarin.vercel.app/cart', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/cart/${_id}`, {
+                fetch(`https://fashion-site-server-6y1v8qce8-khadizajarin.vercel.app/cart/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -57,17 +57,18 @@ const MyCart = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-4 max-w-7xl mx-auto mt-32">
+            <div className="text-5xl text-center mt-10 max-w-5xl mx-auto">Products are sorted at the begining in the order of most recently added.</div>
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-4 max-w-7xl mx-auto mt-24">
                 {added.map((add) => (
                     <div key = {add._id} >
-                        <div className="card lg:card-side bg-base-100 shadow-xl">
-                            <figure><img className="lg:h-96 lg:w-96" src={add.object.photo}  alt={add.object.productName}/></figure>
+                        <div className="card lg:card-side bg-base-100">
+                            <img className="lg:h-96 lg:w-96" src={add.object.photo}  alt={add.object.productName}/>
                             <div className="card-body">
                                 <h2 className="card-title text-3xl">{add.object.productName}</h2>
+                                <p className="text-2xl">{add.object.brand}</p>
                                 <p className="text-xl font-bold">{add.object.type}</p>
                                 <p className="text-lg">{add.object.description}</p>
                                 <p>{add.object.price}</p>
-                                <p>{add.object.rating}</p>
                                 <div className="card-actions justify-end">
                                 <button onClick={() => handleDeleteCart(add._id)} className="btn btn-neutral">Delete from Cart</button>
                                 </div>

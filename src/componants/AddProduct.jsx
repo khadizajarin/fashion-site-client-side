@@ -19,7 +19,7 @@ const AddProduct = () => {
 
         console.log(newProduct);
 
-        fetch('https://fashion-site-server-go9vg31hf-khadizajarin.vercel.app/addProduct',{
+        fetch('https://fashion-site-server-6y1v8qce8-khadizajarin.vercel.app/addProduct',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
@@ -53,6 +53,7 @@ const AddProduct = () => {
        <div>
             <Navbar></Navbar>
             <div className="max-w-7xl mx-auto mt-16">
+                <div className="text-5xl text-center mb-10">Add a new Product to show availability.</div>
                 <form onSubmit={handleAddProduct}> 
                     <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center">
                         <div className="form-control w-full max-w-xs">

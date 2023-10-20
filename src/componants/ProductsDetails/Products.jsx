@@ -17,7 +17,7 @@ const Products = (params) => {
       const email = user.email;
       const newCart ={email , object}
     
-      fetch('http://localhost:5000/cart',{
+      fetch('https://fashion-site-server-6y1v8qce8-khadizajarin.vercel.app/cart',{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const Products = (params) => {
 
     // add new product to to database
   useEffect(() => {
-    fetch('https://fashion-site-server-go9vg31hf-khadizajarin.vercel.app/addProduct', {
+    fetch('https://fashion-site-server-6y1v8qce8-khadizajarin.vercel.app/addProduct', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -58,10 +58,7 @@ const Products = (params) => {
       });
   }, []);
 
-  // const availableProducts =products.filter(product => product.brand === name);
-  // if( availableProducts = 0){
-    
-  // }
+ 
 
   
   return (
@@ -90,7 +87,42 @@ const Products = (params) => {
                           <p className="font-bold text-xl">{product.brand}</p>
                           <p className="font-bold">{product.type}</p>
                           <p className="font-bold">{product.price}</p> 
-                          <p>{product.rating}</p>
+                          <p className="flex gap-6 text-lg">
+                            {product.rating}{
+                              <div className="rating gap-1">
+                                <input
+                                  type="radio"
+                                  name="1"
+                                  style={{ backgroundColor: (product.rating > 1) ? 'black' : 'gray' }}
+                                  className="mask mask-heart"
+                                />
+                                <input
+                                  type="radio"
+                                  name="2"
+                                  style={{ backgroundColor: (product.rating > 2 )? 'black' : 'gray' }}
+                                  className="mask mask-heart"
+                                />
+                                <input
+                                  type="radio"
+                                  name="3"
+                                  style={{ backgroundColor: (product.rating > 3) ? 'black' : 'gray' }}
+                                  className="mask mask-heart"
+                                />
+                                <input
+                                  type="radio"
+                                  name="4"
+                                  style={{ backgroundColor: (product.rating > 4 )? 'black' : 'gray' }}
+                                  className="mask mask-heart"
+                                />
+                                <input
+                                  type="radio"
+                                  name="5"
+                                  style={{ backgroundColor: (product.rating >= 4.9) ? 'black' : 'gray' }}
+                                  className="mask mask-heart"
+                                />
+                              </div>
+                          
+                            }</p>
                           <div className="card-actions justify-end">
                             <Link to ={`/details/${product._id}`}><button className="btn btn-neutral">Details</button></Link>
                             <Link to={`/updateProduct/${product._id}`}><button className="btn btn-neutral">Update</button></Link>
@@ -101,7 +133,8 @@ const Products = (params) => {
                   </div>
                 ))) : (
                   <div className="text-7xl font-extrabold text-center">
-                    No products are available right now!
+                    No products are available right now! Or,
+                    Wait to see Products!
                   </div>
                 )
             }
