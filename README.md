@@ -1,4 +1,6 @@
 **Project Overview**
+Here we Have our e-commerce site SLICK . Explore the site here : **https://65322a56d8a3b36d3750cc16--rainbow-biscotti-9c039c.netlify.app/**
+the  feature you will get:
 This client-side application is part of a comprehensive e-commerce platform for fashion and apparel. It includes a user-friendly website with features like product management, user authentication, a shopping cart, and product details pages. Here are some key features and information about this project:
 - User-friendly interface with a navigation bar, banner, and footer, offering easy access to Home, Add Product, My Cart, and Login.
 - Showcase at least six brands on the home page, each with an image and name, allowing users to explore brand-specific product offerings.
