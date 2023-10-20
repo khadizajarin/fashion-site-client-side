@@ -2,10 +2,9 @@ import{ useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../Navbar";
 import Advertisement from "../Advertisement";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import { useContext} from "react";
 import { AuthContext } from "../AuthProvide/AuthProvider";
-import Swal from "sweetalert2";
 
 const Products = (params) => {
   const [products, setProducts] = useState([]);
@@ -17,7 +16,6 @@ const Products = (params) => {
     const handleCartAdd= ((user,object) => {
       const email = user.email;
       const newCart ={email , object}
-      console.log(newCart);
     
       fetch('http://localhost:5000/cart',{
         method: 'POST',
@@ -28,11 +26,11 @@ const Products = (params) => {
       })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if(data.inserted){
+        if(data.insertedId){
           Swal.fire({
             icon: "success",
             title: 'Product Added to Cart Successfully!',
+            text: 'See your added products in My Cart',
             timer: 2000
           });
         }
@@ -60,8 +58,12 @@ const Products = (params) => {
       });
   }, []);
 
+  // const availableProducts =products.filter(product => product.brand === name);
+  // if( availableProducts = 0){
+    
+  // }
 
-
+  
   return (
     <div>
       <Navbar></Navbar>
@@ -78,7 +80,8 @@ const Products = (params) => {
       <div className="max-w-7xl mx-auto mt-20">
           <div className="">
             {
-                products.filter(product => product.brand === name).map(product => (
+              (products.filter(product => product.brand === name) != 0) ?
+               ( products.filter(product => product.brand === name).map(product => (
                   <div key={product._id}>
                       <div className="card lg:card-side bg-base-100 shadow-xl my-10 ">
                         <figure><img className="h-96 w-96" src={product.photo} alt="Album"/></figure>
@@ -88,16 +91,19 @@ const Products = (params) => {
                           <p className="font-bold">{product.type}</p>
                           <p className="font-bold">{product.price}</p> 
                           <p>{product.rating}</p>
-                          {/* <p>{product.description}</p> */}
                           <div className="card-actions justify-end">
-                            <button className="btn btn-neutral">Details</button>
+                            <Link to ={`/details/${product._id}`}><button className="btn btn-neutral">Details</button></Link>
                             <Link to={`/updateProduct/${product._id}`}><button className="btn btn-neutral">Update</button></Link>
                             <button onClick={() => handleCartAdd(user,product)}  className="btn btn-neutral">Add to Cart</button>
                           </div>
                         </div>
                     </div>
                   </div>
-                ))
+                ))) : (
+                  <div className="text-7xl font-extrabold text-center">
+                    No products are available right now!
+                  </div>
+                )
             }
           </div>
 

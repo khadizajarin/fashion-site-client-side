@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import Navbar from "./Navbar";
 import { useLoaderData} from "react-router-dom";
-// import { useEffect, useState } from "react";
+
 
 const UpdateProduct = () => {
 

@@ -1,44 +1,12 @@
 import Navbar from "./Navbar";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "./AuthProvide/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
-    // const myCart = useLoaderData();
     const {user} = useContext(AuthContext);
 
     const [added, setAdded] = useState([]);
-    // const [displayCart, setDisplayCart] = useState([]);
-
-    // useEffect(() => {
-    // const storeCartIds = getStoredProduct();
-
-    // if (myCart.length > 0) {
-    //     const cart = [];
-    //     for (const id of storeCartIds) {
-    //     const cartItem = myCart.find(cart => cart._id == id)
-    //     cart.push(cartItem);
-    //     }
-    //     setAdded(cart);
-    //     setDisplayCart(cart);
-    // }
-    // }, [myCart]);
-
-//     const handleCartDelete = (id) => {
-//     const storedAllProduct = getStoredProduct();
-
-//     const index = storedAllProduct.indexOf(id);
-
-//     if (index !== -1) {
-//         storedAllProduct.splice(index, 1);
-//         localStorage.setItem('addedCart', JSON.stringify(storedAllProduct));
-
-//         // Update the added state without a full route reload
-//         const remaining = added.filter(item => item._id !== id);
-//         console.log(remaining);
-//         setAdded(remaining);
-//         setDisplayCart(remaining);
-//   }
-//     }
 
     useEffect(() => {
         fetch('http://localhost:5000/cart', {
@@ -49,16 +17,42 @@ const MyCart = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
             const cartFound = data.filter(product => product.email=== user.email);
             setAdded(cartFound);
-            console.log(user, added);
         })
         .catch((error) => {
             console.error(error);
         });
     }, [added]);
 
+
+    const handleDeleteCart = (_id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/cart/${_id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.deletedCount > 0){
+                        Swal.fire(
+                            'Deleted!',
+                            'Prodcut has been deleted from cart.',
+                            'success'
+                        )
+                    }
+                })
+            }
+          })
+    }
 
     return (
         <div>
@@ -75,7 +69,7 @@ const MyCart = () => {
                                 <p>{add.object.price}</p>
                                 <p>{add.object.rating}</p>
                                 <div className="card-actions justify-end">
-                                <button className="btn btn-neutral">Delete from Cart</button>
+                                <button onClick={() => handleDeleteCart(add._id)} className="btn btn-neutral">Delete from Cart</button>
                                 </div>
                             </div>
                         </div>
