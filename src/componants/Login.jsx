@@ -36,9 +36,9 @@ const Login = () => {
             console.error(error);
             Swal.fire({
                 title: 'Error!',
-                text: 'tomar email othoba password vul hoise! chokh meilla likho!',
+                text: 'Invalid email or password!',
                 icon: 'error',
-                confirmButtonText: 'Likhtesi Wait!'
+                confirmButtonText: 'Ok'
               })
         })
     }
@@ -87,7 +87,7 @@ const Login = () => {
                                 <button className="btn btn-neutral">Login</button>
                             </div>
                             <button onClick={handleLogInWithGoogle} className="btn btn-outline">Login with Google</button>
-                            <p className="py-6">Do not have a account? PLease proceed to <span className="text-gray-900 font-bold" to='/register' onClick={goToRegister} >Register</span></p>
+                            <p className="py-6">Do not have a account? Please proceed to <span className="text-gray-900 font-bold" to='/register' onClick={goToRegister} >Register</span></p>
                         </form>
 
                     </div>

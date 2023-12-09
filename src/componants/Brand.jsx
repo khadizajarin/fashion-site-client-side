@@ -6,7 +6,6 @@ const Brand = ({ brand }) => {
 
 
     return (
-        <div className="">
             <div className="card bg-base-100 shadow-xl image-full gap-9 h-96 w-96">
                 <figure>
                     <img className="" src={image} alt={name} />
@@ -19,7 +18,6 @@ const Brand = ({ brand }) => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

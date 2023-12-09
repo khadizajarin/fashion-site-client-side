@@ -57,7 +57,7 @@ const MyCart = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="text-5xl text-center mt-10 max-w-5xl mx-auto">Products are sorted at the begining in the order of most recently added.</div>
+            <div className="text-5xl text-center mt-10 max-w-5xl mx-auto">Cart is sorted with previously added products at the beginning.</div>
             <div className="grid grid-cols-1 md:grid-cols-1 gap-4 max-w-7xl mx-auto mt-24">
                 {added.map((add) => (
                     <div key = {add._id} >

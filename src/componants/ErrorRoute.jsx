@@ -7,7 +7,7 @@ const ErrorRoute = () => {
         <div>
             <Navbar></Navbar>
             <div className=" flex items-center justify-center">
-                <h2 className="text-3xl">EKhane nai kichui</h2>
+                <h2 className="text-3xl">Oppss! Something is wrong!</h2>
             </div>
             <Footer></Footer>
         </div>
