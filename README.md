@@ -1,5 +1,5 @@
 **Project Overview**
-Here we Have our e-commerce site SLICK . Explore the site here : **https://65322a56d8a3b36d3750cc16--rainbow-biscotti-9c039c.netlify.app/**
+Here we Have our e-commerce site SLICK . Explore the site here : **https://rainbow-biscotti-9c039c.netlify.app/**
 Key Functionality Highlights:
 - Homepage: Includes navbar, banner section, meals by category, additional relevant sections, and membership section.
 - Meal Detail Page: Shows detailed meal information, reviews, like button, and meal request button.
